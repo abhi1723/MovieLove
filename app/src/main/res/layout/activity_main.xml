@@ -4,14 +4,118 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#594e4e"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/boundary_for_recycler_view">
+   <android.support.v7.widget.Toolbar
+       android:layout_width="match_parent"
+       android:layout_height="?attr/actionBarSize"
+       android:id="@+id/main_tool_bar"
+       android:background="@color/colorPrimaryDark"
+       android:layout_alignParentTop="true"
+       >
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Love Movies"
+               android:layout_centerVertical="true"
+               android:textSize="18sp"
+               android:textColor="#fff"
+               android:textStyle="bold"/>
+         <ImageView
+             android:layout_alignParentRight="true"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@drawable/search"
+             android:id="@+id/seach_icon"
+           />
+       </RelativeLayout>
 
+   </android.support.v7.widget.Toolbar>
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/main_tool_bar_search"
+        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+           <ImageView
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:src="@drawable/back"
+               android:layout_gravity="center_vertical"
+               android:id="@+id/back_btn"
+               android:layout_alignParentLeft="true"
+               />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:layout_margin="8dp"
+                android:imeOptions="actionSearch"
+                android:textColor="#fff"
+                android:inputType="text"
+                android:hint="Search Your favourite movie/Serials"
+                android:id="@+id/search_movies"/>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+</LinearLayout>
    <android.support.v7.widget.RecyclerView
        android:id="@+id/recyclerView"
+      android:layout_below="@id/boundary_for_recycler_view"
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
-
    </android.support.v7.widget.RecyclerView>
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/below_tool_bar"
+        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:src="@drawable/trending"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:src="@drawable/toprted"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:src="@drawable/upcoming"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:src="@drawable/lace"/>
+
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
 
 </RelativeLayout>
